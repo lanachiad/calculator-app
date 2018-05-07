@@ -4,11 +4,9 @@ import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 class Button extends React.Component {
 	render() {
 		return (
-			<View>
         <TouchableHighlight style={btnStyles.btn}>
         	<Text style={btnStyles.text}>{this.props.value}</Text>
         </TouchableHighlight>
-			</View>
 		)
 	}
 }
