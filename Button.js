@@ -1,9 +1,15 @@
 import React from 'react';
-import {StyleSheet, TouchableHighlight, View} from 'react-native';
+import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 
 class Button extends React.Component {
 	render() {
-		return (<Text>test</Text>)
+		return (
+			<View>
+        <TouchableHighlight>
+        	<Text>Test</Text>
+        </TouchableHighlight>
+			</View>
+		)
 	}
 }
 
