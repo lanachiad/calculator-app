@@ -6,7 +6,7 @@ class Button extends React.Component {
 		return (
 			<View>
         <TouchableHighlight>
-        	<Text>Test</Text>
+        	<Text>{this.props.value}</Text>
         </TouchableHighlight>
 			</View>
 		)
