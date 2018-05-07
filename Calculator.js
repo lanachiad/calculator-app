@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 import { StyleSheet, Text, View } from 'react-native';
 
 class Calculator extends React.Component {
@@ -6,6 +7,7 @@ class Calculator extends React.Component {
 		return (
 			<View style={styles.container}>
 				<Text>Hi, this is a calculator</Text>
+				<Button />
 			</View>
 		)
 	}
