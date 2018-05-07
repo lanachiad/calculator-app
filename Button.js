@@ -4,7 +4,7 @@ import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 class Button extends React.Component {
 	render() {
 		return (
-      <TouchableHighlight style={btnStyles.btn}>
+      <TouchableHighlight onPress={this.props.triggerButton} style={btnStyles.btn}>
         <Text style={btnStyles.text}>{this.props.value}</Text>
       </TouchableHighlight>
 		)
@@ -14,7 +14,10 @@ class Button extends React.Component {
 const btnStyles = StyleSheet.create({
 	btn: {
 		backgroundColor: 'pink',
-		margin: 5,
+		marginBottom: 10,
+		marginLeft: 5,
+		marginRight: 5,
+		marginTop: 10,
 		padding: 10,
 		width: 60,
 	},
