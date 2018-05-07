@@ -5,12 +5,20 @@ class Button extends React.Component {
 	render() {
 		return (
 			<View>
-        <TouchableHighlight>
+        <TouchableHighlight style={btnStyles.btn}>
         	<Text>{this.props.value}</Text>
         </TouchableHighlight>
 			</View>
 		)
 	}
 }
+
+const btnStyles = StyleSheet.create({
+	btn: {
+		backgroundColor: 'pink',
+		margin: 5,
+		padding: 10
+	}
+})
 
 export default Button;
