@@ -1,18 +1,25 @@
 import React from 'react';
 import Field from './Field';
 import Button from './Button';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 
 class Calculator extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentInput: 0
+			currentInput: '0'
 		}
 	}
 
-	// onBtnPress = () => {
-	// 	this.setState = ({ currentInput: })
+	onBtnPress = () => {
+		// this.setState = ({ currentInput: newInput })
+		// this.updateInputDisplay();
+		Alert.alert("test");
+	}
+
+	// updateInputDisplay = () => {
+	// 	let updatedInput = this.state.currentInput;
+	// 	return updatedInput;
 	// }
 
 	render() {
@@ -20,7 +27,7 @@ class Calculator extends React.Component {
 			<View style={styles.btnContainer}>
 				<Field input={this.state.currentInput} />
 				<View style={styles.btnWrapper}>
-					<Button value={1} />
+					<Button triggerButton={this.onBtnPress} value={1} />
 					<Button value={2} />
 					<Button value={3} />
 				</View>
