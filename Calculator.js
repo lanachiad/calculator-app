@@ -1,4 +1,5 @@
 import React from 'react';
+import Field from './Field';
 import Button from './Button';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -6,6 +7,7 @@ class Calculator extends React.Component {
 	render() {
 		return (
 			<View style={styles.btnContainer}>
+				<Field />
 				<View style={styles.btnWrapper}>
 					<Button value={1} />
 					<Button value={2} />
