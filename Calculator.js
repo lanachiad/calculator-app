@@ -4,6 +4,17 @@ import Button from './Button';
 import { StyleSheet, Text, View } from 'react-native';
 
 class Calculator extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentInput: ''
+		}
+	}
+
+	// onBtnPress = () => {
+	// 	this.setState = ({ currentInput: })
+	// }
+
 	render() {
 		return (
 			<View style={styles.btnContainer}>
@@ -34,6 +45,7 @@ class Calculator extends React.Component {
 const styles = StyleSheet.create({
 	btnContainer: {
 		alignItems: 'center',
+		marginTop: 100,
 	},
 	btnWrapper: {
 		flexDirection: 'row',
