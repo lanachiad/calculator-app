@@ -11,10 +11,13 @@ class Calculator extends React.Component {
 		}
 	}
 
-	onBtnPress = () => {
-		// this.setState = ({ currentInput: newInput })
-		// this.updateInputDisplay();
-		Alert.alert("test");
+	onBtnPress = (newInput) => {
+		Alert.alert(this.state.currentInput);
+		this.setState = ({ currentInput: newInput })
+	}
+
+	updateCurrentInput = (newInput) => {
+		this.setState = ({ currentInput: newInput })
 	}
 
 	// updateInputDisplay = () => {
@@ -27,7 +30,7 @@ class Calculator extends React.Component {
 			<View style={styles.btnContainer}>
 				<Field input={this.state.currentInput} />
 				<View style={styles.btnWrapper}>
-					<Button triggerButton={this.onBtnPress} value={1} />
+					<Button triggerButton={this.onBtnPress(1)} value={1} />
 					<Button value={2} />
 					<Button value={3} />
 				</View>
