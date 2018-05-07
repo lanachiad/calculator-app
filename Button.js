@@ -6,7 +6,7 @@ class Button extends React.Component {
 		return (
 			<View>
         <TouchableHighlight style={btnStyles.btn}>
-        	<Text>{this.props.value}</Text>
+        	<Text style={btnStyles.text}>{this.props.value}</Text>
         </TouchableHighlight>
 			</View>
 		)
@@ -17,7 +17,12 @@ const btnStyles = StyleSheet.create({
 	btn: {
 		backgroundColor: 'pink',
 		margin: 5,
-		padding: 10
+		padding: 10,
+		width: 60,
+	},
+	text: {
+		fontSize: 30,
+		textAlign: 'center',
 	}
 })
 
