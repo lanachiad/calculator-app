@@ -7,7 +7,7 @@ class Calculator extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentInput: ''
+			currentInput: 0
 		}
 	}
 
@@ -18,7 +18,7 @@ class Calculator extends React.Component {
 	render() {
 		return (
 			<View style={styles.btnContainer}>
-				<Field />
+				<Field input={this.state.currentInput} />
 				<View style={styles.btnWrapper}>
 					<Button value={1} />
 					<Button value={2} />
