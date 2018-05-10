@@ -7,32 +7,30 @@ class Calculator extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentInput: '0'
+			currentInput: 0
 		}
 	}
 
 	onBtnPress = (newInput) => {
-		Alert.alert(this.state.currentInput);
 		this.setState = ({ currentInput: newInput })
+		// this.displayInput();
 	}
 
-	updateCurrentInput = (newInput) => {
-		this.setState = ({ currentInput: newInput })
-	}
-
-	// updateInputDisplay = () => {
-	// 	let updatedInput = this.state.currentInput;
-	// 	return updatedInput;
-	// }
+		displayInput = () => {
+			let currentDisplay = this.state.currentInput;
+			return currentDisplay;
+		}
 
 	render() {
+		let currentDisplay = this.state.currentInput;
+
 		return (
 			<View style={styles.btnContainer}>
-				<Field input={this.state.currentInput} />
+				<Field input={currentDisplay} />
 				<View style={styles.btnWrapper}>
 					<Button triggerButton={this.onBtnPress(1)} value={1} />
-					<Button value={2} />
-					<Button value={3} />
+					<Button triggerButton={this.onBtnPress(2)} value={2} />
+					<Button triggerButton={this.onBtnPress(3)} value={3} />
 				</View>
 				<View style={styles.btnWrapper}>
 					<Button value={4} />
