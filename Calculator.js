@@ -26,23 +26,30 @@ class Calculator extends React.Component {
 		return (
 			<View style={styles.btnContainer}>
 				<Field input={currentDisplay} />
+				<View style={styles.btnWrapper} />
 				<View style={styles.btnWrapper}>
 					<Button triggerButton={this.onBtnPress} value={1} />
 					<Button triggerButton={this.onBtnPress} value={2} />
 					<Button triggerButton={this.onBtnPress} value={3} />
+					<Button triggerButton={this.onBtnPress} value={'+'} />
 				</View>
 				<View style={styles.btnWrapper}>
 					<Button triggerButton={this.onBtnPress} value={4} />
 					<Button triggerButton={this.onBtnPress} value={5} />
 					<Button triggerButton={this.onBtnPress} value={6} />
+					<Button triggerButton={this.onBtnPress} value={'-'} />
 				</View>
 				<View style={styles.btnWrapper}>
 					<Button triggerButton={this.onBtnPress} value={7} />
 					<Button triggerButton={this.onBtnPress} value={8} />
 					<Button triggerButton={this.onBtnPress} value={9} />
+					<Button triggerButton={this.onBtnPress} value={'×'} />
 				</View>
 				<View style={styles.btnWrapper}>
+					<Button triggerButton={this.onBtnPress} value={'AC'} />
 					<Button triggerButton={this.onBtnPress} value={0} />
+					<Button triggerButton={this.onBtnPress} value={'%'} />
+					<Button triggerButton={this.onBtnPress} value={'÷'} />
 				</View>
 			</View>
 		);
