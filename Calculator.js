@@ -20,6 +20,10 @@ class Calculator extends React.Component {
 		return currentDisplay;
 	};
 
+	clearInput = () => {
+		this.setState({ currentInput: 0 });
+	};
+
 	render() {
 		let currentDisplay = this.state.currentInput;
 
@@ -46,7 +50,7 @@ class Calculator extends React.Component {
 					<Button triggerButton={this.onBtnPress} value={'×'} />
 				</View>
 				<View style={styles.btnWrapper}>
-					<Button triggerButton={this.onBtnPress} value={'AC'} />
+					<Button triggerButton={this.clearInput} value={'AC'} />
 					<Button triggerButton={this.onBtnPress} value={0} />
 					<Button triggerButton={this.onBtnPress} value={'%'} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
