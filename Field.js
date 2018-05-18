@@ -1,13 +1,15 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 class Field extends React.Component {
 	render() {
-		return(
+		return (
 			<View style={fieldStyles.wrapper}>
-				<Text style={fieldStyles.inputText}>{this.props.input}</Text>
+				<Text style={fieldStyles.inputText}>
+					{this.props.input}
+				</Text>
 			</View>
-		)
+		);
 	}
 }
 
@@ -15,12 +17,12 @@ const fieldStyles = StyleSheet.create({
 	wrapper: {
 		backgroundColor: 'lightblue',
 		padding: 10,
-		width: 200,
+		width: 275
 	},
 	inputText: {
 		fontSize: 40,
-		textAlign: 'center',
+		textAlign: 'center'
 	}
-})
+});
 
 export default Field;
