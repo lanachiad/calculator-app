@@ -1,13 +1,19 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
 class Button extends React.Component {
+	onButtonPress = () => {
+		this.props.triggerButton(this.props.value);
+	};
+
 	render() {
 		return (
-      <TouchableHighlight onPress={this.props.triggerButton} style={btnStyles.btn}>
-        <Text style={btnStyles.text}>{this.props.value}</Text>
-      </TouchableHighlight>
-		)
+			<TouchableHighlight onPress={this.onButtonPress} style={btnStyles.btn}>
+				<Text style={btnStyles.text}>
+					{this.props.value}
+				</Text>
+			</TouchableHighlight>
+		);
 	}
 }
 
@@ -19,12 +25,12 @@ const btnStyles = StyleSheet.create({
 		marginRight: 5,
 		marginTop: 10,
 		padding: 10,
-		width: 60,
+		width: 60
 	},
 	text: {
 		fontSize: 30,
-		textAlign: 'center',
+		textAlign: 'center'
 	}
-})
+});
 
 export default Button;
