@@ -16,6 +16,7 @@ class Field extends React.Component {
 const fieldStyles = StyleSheet.create({
 	wrapper: {
 		backgroundColor: 'lightblue',
+		height: 70,
 		padding: 10,
 		width: 275
 	},
