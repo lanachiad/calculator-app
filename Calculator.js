@@ -20,6 +20,7 @@ class Calculator extends React.Component {
 		} else {
 			let total = this.state.allInputs.concat(this.state.currentInput);
 			this.setState({ allInputs: total })
+			this.setState({ currentInput: [] })
 		}
 	};
 
