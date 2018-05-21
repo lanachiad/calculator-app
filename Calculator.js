@@ -7,13 +7,22 @@ class Calculator extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			currentInput: []
+			currentInput: [],
+			firstValue: 0
 		};
 	}
 
 	onBtnPress = newInput => {
-		this.setState({ currentInput: newInput });
+		// this.setState({ currentInput: newInput });
+		if (newInput != NaN) {
+			let joined = this.state.currentInput.concat(newInput);
+			this.setState({ currentInput: joined });
+		} 
 	};
+
+	displayInput = () => {
+
+	}
 
 	clearInput = () => {
 		this.setState({ currentInput: 0 });
