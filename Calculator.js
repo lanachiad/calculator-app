@@ -17,7 +17,10 @@ class Calculator extends React.Component {
 		if (typeof newInput == 'number') {
 			let joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
-		} 
+		} else {
+			let total = this.state.allInputs.concat(this.state.currentInput);
+			this.setState({ allInputs: total })
+		}
 	};
 
 	clearInput = () => {
@@ -55,6 +58,7 @@ class Calculator extends React.Component {
 					<Button triggerButton={this.onBtnPress} value={'%'} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
 				</View>
+				<Text>{this.state.allInputs}</Text>
 			</View>
 		);
 	}
