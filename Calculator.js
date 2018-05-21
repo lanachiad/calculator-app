@@ -8,7 +8,7 @@ class Calculator extends React.Component {
 		super();
 		this.state = {
 			currentInput: [],
-			firstValue: 0
+			allInputs: []
 		};
 	}
 
@@ -19,10 +19,6 @@ class Calculator extends React.Component {
 			this.setState({ currentInput: joined });
 		} 
 	};
-
-	displayInput = () => {
-
-	}
 
 	clearInput = () => {
 		this.setState({ currentInput: 0 });
