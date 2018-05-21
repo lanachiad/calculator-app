@@ -15,11 +15,6 @@ class Calculator extends React.Component {
 		this.setState({ currentInput: newInput });
 	};
 
-	displayInput = () => {
-		let currentDisplay = this.state.currentInput;
-		return currentDisplay;
-	};
-
 	clearInput = () => {
 		this.setState({ currentInput: 0 });
 	};
