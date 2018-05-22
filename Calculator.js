@@ -13,23 +13,31 @@ class Calculator extends React.Component {
 	}
 
 	onBtnPress = newInput => {
-		if (typeof newInput == 'number') {
+		let lastInput = [];
+		if ( typeof newInput == 'number' ) {
 			let joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
 		} else if ( newInput === "+" ) {
 			// let total = this.state.allInputs.push(this.state.currentInput)
-			let total = this.state.allInputs.concat(this.state.currentInput);
-
+			// let total = this.state.allInputs.concat(this.state.currentInput);
 			// let previousValue = this.state.currentInput;
+			let result;
 
-			this.setState({ allInputs: total })
+			lastInput.push(this.state.currentInput);
+
+			if (lastInput.length > 1) {
+				result = lastInput[0] + lastInput[1];
+				this.setState({ currentInput: result });
+			}
+
+			// this.setState({ allInputs: total })
 			this.setState({ currentInput: [] })
 		} else if ( newInput === "-" ) {
 
 		} else if ( newInput === "×" ) {
 
 		} else if ( newInput === "÷" ) {
-			
+
 		}
 	};
 
