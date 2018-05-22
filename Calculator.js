@@ -21,14 +21,11 @@ class Calculator extends React.Component {
 			// let total = this.state.allInputs.push(this.state.currentInput)
 			// let total = this.state.allInputs.concat(this.state.currentInput);
 			// let previousValue = this.state.currentInput;
-			let result;
-
-			lastInput.push(this.state.currentInput);
-
-			if (lastInput.length > 1) {
-				result = lastInput[0] + lastInput[1];
-				this.setState({ currentInput: result });
-			}
+			
+			// store the currentInput
+			// if this is the second number, add new input to stored input
+			// save the result as a new value
+			// if there's another number, add new input to saved result
 
 			// this.setState({ allInputs: total })
 			this.setState({ currentInput: [] })
