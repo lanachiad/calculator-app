@@ -13,7 +13,6 @@ class Calculator extends React.Component {
 	}
 
 	onBtnPress = newInput => {
-		// this.setState({ currentInput: newInput });
 		if (typeof newInput == 'number') {
 			let joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
