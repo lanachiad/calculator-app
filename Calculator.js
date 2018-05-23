@@ -43,6 +43,11 @@ class Calculator extends React.Component {
 		this.setState({ total: 0 });
 	};
 
+	equalInput = () => {
+		let totalSum = this.state.total;
+		this.setState({ currentInput: totalSum });
+	}
+
 	render() {
 		return (
 			<View style={styles.btnContainer}>
@@ -69,7 +74,7 @@ class Calculator extends React.Component {
 				<View style={styles.btnWrapper}>
 					<Button triggerButton={this.clearInput} value={'AC'} />
 					<Button triggerButton={this.onBtnPress} value={0} />
-					<Button triggerButton={this.onBtnPress} value={'='} />
+					<Button triggerButton={this.equalInput} value={'='} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
 				</View>
 				<Text>CurrentInput: {this.state.currentInput}</Text>
