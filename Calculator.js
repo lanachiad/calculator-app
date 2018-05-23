@@ -18,6 +18,13 @@ class Calculator extends React.Component {
 			this.setState({ currentInput: joined });
 		} else if ( newInput === "+" ) {
 			// add new currentInput value to the sum
+			let sum = this.state.total;
+			let newValue = Number(this.state.currentInput.join(''));
+
+			sum = sum + newValue;
+
+			this.setState({ total: sum });
+			this.setState({ currentInput: [] });
 		} else if ( newInput === "-" ) {
 
 		} else if ( newInput === "×" ) {
@@ -61,6 +68,7 @@ class Calculator extends React.Component {
 					<Button triggerButton={this.onBtnPress} value={'%'} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
 				</View>
+				<Text>CurrentInput: {this.state.currentInput}</Text>
 				<Text>Total: {this.state.total}</Text>
 			</View>
 		);
