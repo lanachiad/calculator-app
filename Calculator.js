@@ -16,21 +16,26 @@ class Calculator extends React.Component {
 		if ( typeof newInput == 'number' ) {
 			let joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
-		} else if ( newInput === "+" ) {
+		} else if ( newInput === "+" ||
+					newInput === "-" ||
+					newInput === "×" ||
+					newInput === "÷" ) {
 			// add new currentInput value to the sum
 			let sum = this.state.total;
 			let newValue = Number(this.state.currentInput.join(''));
 
-			sum += newValue;
+			if ( newInput === "+" ) {
+				sum += newValue;
+			} else if ( newInput === "-" ) {
+				sum -= newValue;
+			} else if ( newInput === "×" ) {
+				sum *= newValue;
+			} else if ( newInput === "÷" ) {
+				sum /= newValue;
+			}
 
 			this.setState({ total: sum });
 			this.setState({ currentInput: [] });
-		} else if ( newInput === "-" ) {
-
-		} else if ( newInput === "×" ) {
-
-		} else if ( newInput === "÷" ) {
-
 		}
 	};
 
