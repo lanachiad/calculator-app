@@ -20,7 +20,6 @@ class Calculator extends React.Component {
 					newInput === "-" ||
 					newInput === "×" ||
 					newInput === "÷" ) {
-			// add new currentInput value to the sum
 			let sum = this.state.total;
 			let newValue = Number(this.state.currentInput.join(''));
 
