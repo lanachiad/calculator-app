@@ -21,7 +21,7 @@ class Calculator extends React.Component {
 			let sum = this.state.total;
 			let newValue = Number(this.state.currentInput.join(''));
 
-			sum = sum + newValue;
+			sum += newValue;
 
 			this.setState({ total: sum });
 			this.setState({ currentInput: [] });
