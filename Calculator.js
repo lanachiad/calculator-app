@@ -13,22 +13,11 @@ class Calculator extends React.Component {
 	}
 
 	onBtnPress = newInput => {
-		let lastInput = [];
 		if ( typeof newInput == 'number' ) {
 			let joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
 		} else if ( newInput === "+" ) {
-			// let total = this.state.allInputs.push(this.state.currentInput)
-			// let total = this.state.allInputs.concat(this.state.currentInput);
-			// let previousValue = this.state.currentInput;
-			
-			// store the currentInput
-			// if this is the second number, add new input to stored input
-			// save the result as a new value
-			// if there's another number, add new input to saved result
-
-			// this.setState({ allInputs: total })
-			this.setState({ currentInput: [] })
+			// add new currentInput value to the sum
 		} else if ( newInput === "-" ) {
 
 		} else if ( newInput === "×" ) {
