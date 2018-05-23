@@ -8,7 +8,7 @@ class Calculator extends React.Component {
 		super();
 		this.state = {
 			currentInput: [],
-			allInputs: []
+			total: 0
 		};
 	}
 
@@ -60,7 +60,7 @@ class Calculator extends React.Component {
 					<Button triggerButton={this.onBtnPress} value={'%'} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
 				</View>
-				<Text>{this.state.allInputs}</Text>
+				<Text>Total: {this.state.total}</Text>
 			</View>
 		);
 	}
