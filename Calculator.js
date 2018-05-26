@@ -8,6 +8,7 @@ class Calculator extends React.Component {
 		super();
 		this.state = {
 			currentInput: [],
+			lastMethodUsed: '',
 			total: 0
 		};
 	}
@@ -50,6 +51,12 @@ class Calculator extends React.Component {
 				sum += firstNum;
 				this.setState({ currentInput: [] });
 				this.setState({ total: sum });
+			} else if (newInput === '=') {
+				// if (currentInput !== []) {
+				// 	const secondNum = Number(this.state.currentInput.join(''));
+				// 	const method =
+				// }
+				// this.setState({ currentInput: sum });
 			}
 		}
 	};
