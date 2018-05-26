@@ -36,7 +36,16 @@ class Calculator extends React.Component {
 	// 	}
 	// };
 
-	onBtnPress = newInput => {};
+	onBtnPress = newInput => {
+		// this.setState({ currentInput: joined }, () => {
+		// 	console.log(this.state.currentInput);
+		// });
+		if (typeof newInput == 'number') {
+			console.log('hell yeah, its a number');
+			let joined = this.state.currentInput.concat(newInput);
+			this.setState({ currentInput: joined });
+		}
+	};
 
 	clearInput = () => {
 		this.setState({ currentInput: [] });
