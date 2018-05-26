@@ -44,13 +44,14 @@ class Calculator extends React.Component {
 		if (typeof newInput == 'number') {
 			const joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
-		} else if (typeof newInput != 'number') {
+		} else {
 			const firstNum = Number(this.state.currentInput.join(''));
 			let sum = Number(this.state.total);
 			if (newInput === '+') {
 				this.setState({ lastMethodUsed: newInput });
 				this.addInput(firstNum, sum);
 			} else if (newInput === '=') {
+				console.log('this is hit');
 				if (currentInput !== []) {
 					const secondNum = Number(this.state.currentInput.join(''));
 					const method = this.state.lastMethodUsed;
