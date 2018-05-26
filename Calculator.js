@@ -52,11 +52,11 @@ class Calculator extends React.Component {
 				this.setState({ currentInput: [] });
 				this.setState({ total: sum });
 			} else if (newInput === '=') {
-				// if (currentInput !== []) {
-				// 	const secondNum = Number(this.state.currentInput.join(''));
-				// 	const method =
-				// }
-				// this.setState({ currentInput: sum });
+				if (currentInput !== []) {
+					const secondNum = Number(this.state.currentInput.join(''));
+					const method = this.state.lastMethodUsed;
+				}
+				this.setState({ currentInput: sum });
 			}
 		}
 	};
