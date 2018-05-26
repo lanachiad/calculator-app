@@ -55,9 +55,8 @@ class Calculator extends React.Component {
 					const secondNum = Number(this.state.currentInput.join(''));
 					const method = this.state.lastMethodUsed;
 					if (method === '+') {
-						sum += secondNum;
+						this.addInput(secondNum, sum);
 						this.setState({ currentInput: sum });
-						this.setState({ total: sum });
 					}
 				}
 			}
