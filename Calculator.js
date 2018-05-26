@@ -110,7 +110,7 @@ class Calculator extends React.Component {
 				<View style={styles.btnWrapper}>
 					<Button triggerButton={this.clearInput} value={'AC'} />
 					<Button triggerButton={this.onBtnPress} value={0} />
-					<Button triggerButton={this.equalInput} value={'='} />
+					<Button triggerButton={this.onBtnPress} value={'='} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
 				</View>
 				<Text>
