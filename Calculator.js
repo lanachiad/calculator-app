@@ -50,6 +50,7 @@ class Calculator extends React.Component {
 			if (newInput === '+') {
 				this.setState({ lastMethodUsed: newInput });
 				this.addInput(firstNum, sum);
+				console.log('yay you just added');
 			} else if (newInput === '=') {
 				console.log('this is hit');
 				if (currentInput !== []) {
