@@ -61,6 +61,8 @@ class Calculator extends React.Component {
 						this.setState({ currentInput: sum });
 					}
 				}
+			} else if (newInput === '-') {
+				console.log('oh snap, you are subtracting now');
 			}
 		}
 	};
