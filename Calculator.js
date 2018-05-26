@@ -72,11 +72,6 @@ class Calculator extends React.Component {
 		this.setState({ total: 0 });
 	};
 
-	equalInput = () => {
-		const totalSum = this.state.total;
-		this.setState({ currentInput: totalSum });
-	};
-
 	addInput = (newNum, newTotal) => {
 		newTotal += newNum;
 		this.setState({ currentInput: [] });
