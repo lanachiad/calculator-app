@@ -41,10 +41,15 @@ class Calculator extends React.Component {
 		// 	console.log(this.state.currentInput);
 		// });
 		if (typeof newInput == 'number') {
-			let joined = this.state.currentInput.concat(newInput);
+			const joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
 		} else if (typeof newInput != 'number') {
-			let firstNum = this.state.currentInput.join('');
+			const firstNum = this.state.currentInput.join('');
+			let sum = this.state.total;
+			if (newInput === '+') {
+				sum += newInput;
+			}
+			this.setState({ total: sum, currentInput: [] });
 		}
 	};
 
@@ -54,7 +59,7 @@ class Calculator extends React.Component {
 	};
 
 	equalInput = () => {
-		let totalSum = this.state.total;
+		const totalSum = this.state.total;
 		this.setState({ currentInput: totalSum });
 	};
 
