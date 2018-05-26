@@ -12,31 +12,31 @@ class Calculator extends React.Component {
 		};
 	}
 
-	onBtnPress = newInput => {
-		if ( typeof newInput == 'number' ) {
-			let joined = this.state.currentInput.concat(newInput);
-			this.setState({ currentInput: joined });
-		} else if ( newInput === "+" ||
-					newInput === "-" ||
-					newInput === "×" ||
-					newInput === "÷" ) {
-			let sum = this.state.total;
-			let newValue = Number(this.state.currentInput.join(''));
+	// onBtnPress = newInput => {
+	// 	if (typeof newInput == 'number') {
+	// 		let joined = this.state.currentInput.concat(newInput);
+	// 		this.setState({ currentInput: joined });
+	// 	} else if (newInput === '+' || newInput === '-' || newInput === '×' || newInput === '÷') {
+	// 		let sum = this.state.total;
+	// 		let newValue = Number(this.state.currentInput.join(''));
 
-			if ( newInput === "+" ) {
-				sum += newValue;
-			} else if ( newInput === "-" ) {
-				sum -= newValue;
-			} else if ( newInput === "×" ) {
-				sum *= newValue;
-			} else if ( newInput === "÷" ) {
-				sum /= newValue;
-			}
+	// 		if (newInput === '+') {
+	// 			sum += newValue;
+	// 		} else if (newInput === '-') {
+	// 			sum -= newValue;
+	// 		} else if (newInput === '×') {
+	// 			sum *= newValue;
+	// 		} else if (newInput === '÷') {
+	// 			sum /= newValue;
+	// 		}
 
-			this.setState({ total: sum });
-			this.setState({ currentInput: [] });
-		}
-	};
+	// 		this.setState({ total: sum });
+	// 		this.setState({ currentInput: [] });
+	// 	} else if (newInput === '=') {
+	// 	}
+	// };
+
+	onBtnPress = newInput => {};
 
 	clearInput = () => {
 		this.setState({ currentInput: [] });
@@ -46,7 +46,7 @@ class Calculator extends React.Component {
 	equalInput = () => {
 		let totalSum = this.state.total;
 		this.setState({ currentInput: totalSum });
-	}
+	};
 
 	render() {
 		return (
@@ -77,8 +77,12 @@ class Calculator extends React.Component {
 					<Button triggerButton={this.equalInput} value={'='} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
 				</View>
-				<Text>CurrentInput: {this.state.currentInput}</Text>
-				<Text>Total: {this.state.total}</Text>
+				<Text>
+					CurrentInput: {this.state.currentInput}
+				</Text>
+				<Text>
+					Total: {this.state.total}
+				</Text>
 			</View>
 		);
 	}
