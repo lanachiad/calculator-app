@@ -48,6 +48,7 @@ class Calculator extends React.Component {
 			const firstNum = Number(this.state.currentInput.join(''));
 			let sum = Number(this.state.total);
 			if (newInput === '+') {
+				this.setState({ lastMethodUsed: newInput });
 				this.addInput(firstNum, sum);
 			} else if (newInput === '=') {
 				if (currentInput !== []) {
