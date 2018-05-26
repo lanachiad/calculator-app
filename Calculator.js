@@ -45,7 +45,7 @@ class Calculator extends React.Component {
 			let joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
 		} else if (typeof newInput != 'number') {
-			let firstNum = this.state.currentInput;
+			let firstNum = this.state.currentInput.join('');
 			console.log(firstNum);
 		}
 	};
