@@ -50,9 +50,7 @@ class Calculator extends React.Component {
 			if (newInput === '+') {
 				this.setState({ lastMethodUsed: newInput });
 				this.addInput(firstNum, sum);
-				console.log('yay you just added');
 			} else if (newInput === '=') {
-				console.log('this is hit');
 				if (this.state.currentInput !== []) {
 					const secondNum = Number(this.state.currentInput.join(''));
 					const method = this.state.lastMethodUsed;
@@ -60,9 +58,10 @@ class Calculator extends React.Component {
 						this.addInput(secondNum, sum);
 						this.setState({ currentInput: this.state.total });
 					}
+					
+				} else if (newInput === '-') {
+					console.log('oh snap, you are subtracting now');
 				}
-			} else if (newInput === '-') {
-				console.log('oh snap, you are subtracting now');
 			}
 		}
 	};
@@ -103,7 +102,7 @@ class Calculator extends React.Component {
 					<Button triggerButton={this.onBtnPress} value={'×'} />
 				</View>
 				<View style={styles.btnWrapper}>
-					<Button triggerButton={this.clearInput} value={'AC'} />
+					<Button triggerButton={this.clearInput} value={'CE'} />
 					<Button triggerButton={this.onBtnPress} value={0} />
 					<Button triggerButton={this.onBtnPress} value={'='} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
