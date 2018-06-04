@@ -19,7 +19,7 @@ class Button extends React.Component {
 
 const btnStyles = StyleSheet.create({
 	btn: {
-		backgroundColor: 'pink',
+		backgroundColor: 'lavender',
 		marginBottom: 10,
 		marginLeft: 5,
 		marginRight: 5,
