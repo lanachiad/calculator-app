@@ -60,7 +60,7 @@ class Calculator extends React.Component {
 	render() {
 		return (
 			<View style={styles.btnContainer}>
-				<Field input={this.state.currentInput} />
+				<Field input={this.state.display} />
 				<View style={styles.btnWrapper} />
 				<View style={styles.btnWrapper}>
 					<Button triggerButton={this.onBtnPress} value={1} />
