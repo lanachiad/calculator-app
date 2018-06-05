@@ -8,6 +8,7 @@ class Calculator extends React.Component {
 		super();
 		this.state = {
 			currentInput: [],
+			display: '',
 			lastMethodUsed: '',
 			total: 0
 		};
