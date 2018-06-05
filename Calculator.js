@@ -18,14 +18,16 @@ class Calculator extends React.Component {
 		// 	console.log(this.state.currentInput);
 		// });
 		if (typeof newInput == 'number') {
+			// Creating whole numbers from individual number inputs until NaN is pressed
 			const joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined });
 		} else {
-			const firstNum = Number(this.state.currentInput.join(''));
+			this.setState({ lastMethodUsed: newInput });
+			const lastNum = Number(this.state.currentInput.join(''));
+			const lastMethod = this.state.lastMethodUsed
 			let sum = Number(this.state.total);
 			if (newInput === '+') {
-				this.setState({ lastMethodUsed: newInput });
-				this.addInput(firstNum, sum);
+				this.addInput(lastNum, sum);
 			} else if (newInput === '=') {
 				if (this.state.currentInput !== []) {
 					const secondNum = Number(this.state.currentInput.join(''));
@@ -34,7 +36,6 @@ class Calculator extends React.Component {
 						this.addInput(secondNum, sum);
 						this.setState({ currentInput: this.state.total });
 					}
-					
 				} else if (newInput === '-') {
 					console.log('oh snap, you are subtracting now');
 				}
@@ -42,16 +43,17 @@ class Calculator extends React.Component {
 		}
 	};
 
-	clearInput = () => {
-		this.setState({ currentInput: [] });
-		this.setState({ total: 0 });
-	};
-
 	addInput = (newNum, newTotal) => {
 		newTotal += newNum;
 		this.setState({ currentInput: [] });
 		this.setState({ total: newTotal });
 	};
+
+	clearInput = () => {
+		this.setState({ currentInput: [] });
+		this.setState({ total: 0 });
+	};
+
 	// Replicate the above for all other methods
 
 	render() {
