@@ -52,6 +52,13 @@ class Calculator extends React.Component {
 		this.setState({ display: newTotal });
 	};
 
+	subtractInput = (newNum, newTotal) => {
+		newTotal -= newNum;
+		this.setState({ currentInput: [] });
+		this.setState({ total: newTotal });
+		this.setState({ display: newTotal });
+	};
+
 	clearInput = () => {
 		this.setState({ currentInput: [] });
 		this.setState({ display: '' });
