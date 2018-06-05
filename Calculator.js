@@ -31,6 +31,8 @@ class Calculator extends React.Component {
 			let sum = Number(this.state.total);
 			if (newInput === '+') {
 				this.addInput(lastNum, sum);
+			} else if (newInput === '-') {
+				this.subtractInput(lastNum, sum);
 			} else if (newInput === '=') {
 				if (this.state.currentInput !== []) {
 					const secondNum = Number(this.state.currentInput.join(''));
@@ -53,10 +55,14 @@ class Calculator extends React.Component {
 	};
 
 	subtractInput = (newNum, newTotal) => {
-		newTotal -= newNum;
-		this.setState({ currentInput: [] });
-		this.setState({ total: newTotal });
-		this.setState({ display: newTotal });
+		if (newTotal !== 0) {
+			newTotal -= newNum;
+			this.setState({ currentInput: [] });
+			this.setState({ total: newTotal });
+			this.setState({ display: newTotal });
+		} else {
+			// something
+		}
 	};
 
 	clearInput = () => {
