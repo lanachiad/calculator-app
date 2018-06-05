@@ -54,6 +54,7 @@ class Calculator extends React.Component {
 
 	clearInput = () => {
 		this.setState({ currentInput: [] });
+		this.setState({ display: '' });
 		this.setState({ total: 0 });
 	};
 
