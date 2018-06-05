@@ -58,8 +58,6 @@ class Calculator extends React.Component {
 		this.setState({ total: 0 });
 	};
 
-	// Replicate the above for all other methods
-
 	render() {
 		return (
 			<View style={styles.btnContainer}>
