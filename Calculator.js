@@ -45,9 +45,9 @@ class Calculator extends React.Component {
 						this.addInput(secondNum, sum);
 					} else if (method === '-') {
 						this.subtractInput(secondNum, sum);
-					} else if (method === '×') {
+					} else if (method == '×') {
 						this.multiplyInput(secondNum, sum);
-					} else if (method === '÷') {
+					} else if (method == '÷') {
 						this.divideInput(secondNum, sum);
 					}
 				} 
@@ -76,13 +76,11 @@ class Calculator extends React.Component {
 
 	multiplyInput = (newNum, newTotal) => {
 		if (newTotal !== 0) {
-			console.log('the total does not equal 0')
 			newTotal *= newNum;
 			this.setState({ currentInput: [] });
 			this.setState({ total: newTotal });
 			this.setState({ display: newTotal });
 		} else {
-			console.log('the total is 0')
 			this.setState({ total: newNum })
 			this.setState({ currentInput: [] });
 		}
@@ -90,13 +88,11 @@ class Calculator extends React.Component {
 
 	divideInput = (newNum, newTotal) => {
 		if (newTotal !== 0) {
-			console.log('the total does not equal 0')
 			newTotal /= newNum;
 			this.setState({ currentInput: [] });
 			this.setState({ total: newTotal });
 			this.setState({ display: newTotal });
 		} else {
-			console.log('the total is 0')
 			this.setState({ total: newNum })
 			this.setState({ currentInput: [] });
 		}
