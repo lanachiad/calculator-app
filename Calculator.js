@@ -12,7 +12,7 @@ class Calculator extends React.Component {
 			lastMethodUsed: '',
 			total: 0
 		};
-	}
+	};
 
 	onBtnPress = newInput => {
 		// this.setState({ currentInput: joined }, () => {
@@ -80,7 +80,7 @@ class Calculator extends React.Component {
 			this.setState({ total: newNum })
 			this.setState({ currentInput: [] });
 		}
-	}
+	};
 
 	divideInput = (newNum, newTotal) => {
 		if (newTotal !== 0) {
@@ -92,7 +92,7 @@ class Calculator extends React.Component {
 			this.setState({ total: newNum })
 			this.setState({ currentInput: [] });
 		}
-	}
+	};
 
 	clearInput = () => {
 		this.setState({ currentInput: [] });
@@ -137,8 +137,8 @@ class Calculator extends React.Component {
 				</Text>
 			</View>
 		);
-	}
-}
+	};
+};
 
 const styles = StyleSheet.create({
 	btnContainer: {
