@@ -102,6 +102,7 @@ class Calculator extends React.Component {
 		this.setState({ currentInput: [] });
 		this.setState({ display: '' });
 		this.setState({ total: 0 });
+		this.setState({ lastMethodUsed: '' });
 	};
 
 	render() {
