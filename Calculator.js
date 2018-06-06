@@ -42,9 +42,7 @@ class Calculator extends React.Component {
 					} else if (method === '-') {
 						this.subtractInput(secondNum, sum);
 					}
-				} else if (newInput === '-') {
-					console.log('oh snap, you are subtracting now');
-				}
+				} 
 			}
 		}
 	};
