@@ -71,7 +71,17 @@ class Calculator extends React.Component {
 	};
 
 	multiplyInput = (newNum, newTotal) => {
-		console.log('oh shit, we multiplyin');
+		if (newTotal !== 0) {
+			newTotal *= newNum;
+			this.setState({ currentInput: [] });
+			this.setState({ total: newTotal });
+			this.setState({ display: newTotal });
+		} else {
+			console.log('newnum is: ' + newNum)
+			console.log('total is: ' + newTotal)
+			this.setState({ total: newNum })
+			this.setState({ currentInput: [] });
+		}
 	}
 
 	clearInput = () => {
