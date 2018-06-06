@@ -134,18 +134,6 @@ class Calculator extends React.Component {
 					<Button triggerButton={this.onBtnPress} value={'='} />
 					<Button triggerButton={this.onBtnPress} value={'÷'} />
 				</View>
-				<Text>
-					CurrentInput: {this.state.currentInput}
-				</Text>
-				<Text>
-					Total: {this.state.total}
-				</Text>
-				<Text>
-					Display: {this.state.display}
-				</Text>
-				<Text>
-					lastMethodUsed: {this.state.lastMethodUsed}
-				</Text>
 			</View>
 		);
 	};
