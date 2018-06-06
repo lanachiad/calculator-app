@@ -139,6 +139,12 @@ class Calculator extends React.Component {
 				<Text>
 					Total: {this.state.total}
 				</Text>
+				<Text>
+					Display: {this.state.display}
+				</Text>
+				<Text>
+					lastMethodUsed: {this.state.lastMethodUsed}
+				</Text>
 			</View>
 		);
 	};
