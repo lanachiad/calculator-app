@@ -43,6 +43,8 @@ class Calculator extends React.Component {
 						this.addInput(secondNum, sum);
 					} else if (method === '-') {
 						this.subtractInput(secondNum, sum);
+					} else if (method === '×') {
+						this.multiplyInput(secondNum, sum);
 					}
 				} 
 			}
