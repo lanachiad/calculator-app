@@ -65,8 +65,6 @@ class Calculator extends React.Component {
 			this.setState({ total: newTotal });
 			this.setState({ display: newTotal });
 		} else {
-			console.log('newnum is: ' + newNum)
-			console.log('total is: ' + newTotal)
 			this.setState({ total: newNum })
 			this.setState({ currentInput: [] });
 		}
@@ -79,8 +77,6 @@ class Calculator extends React.Component {
 			this.setState({ total: newTotal });
 			this.setState({ display: newTotal });
 		} else {
-			console.log('newnum is: ' + newNum)
-			console.log('total is: ' + newTotal)
 			this.setState({ total: newNum })
 			this.setState({ currentInput: [] });
 		}
