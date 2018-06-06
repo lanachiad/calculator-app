@@ -33,6 +33,8 @@ class Calculator extends React.Component {
 				this.addInput(lastNum, sum);
 			} else if (newInput === '-') {
 				this.subtractInput(lastNum, sum);
+			} else if (newInput === '×') {
+				this.multiplyInput(lastNum, sum);
 			} else if (newInput === '=') {
 				if (this.state.currentInput !== []) {
 					const secondNum = Number(this.state.currentInput.join(''));
@@ -67,6 +69,10 @@ class Calculator extends React.Component {
 			this.setState({ currentInput: [] });
 		}
 	};
+
+	multiplyInput = (newNum, newTotal) => {
+		console.log('oh shit, we multiplyin');
+	}
 
 	clearInput = () => {
 		this.setState({ currentInput: [] });
