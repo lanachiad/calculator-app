@@ -41,14 +41,19 @@ class Calculator extends React.Component {
 				if (this.state.currentInput !== []) {
 					const secondNum = Number(this.state.currentInput.join(''));
 					const method = this.state.lastMethodUsed;
+					let operator;
 					if (method === '+') {
-						this.performOperation('+', secondNum, sum)
+						operator = '+';
+						this.performOperation(operator, secondNum, sum);
 					} else if (method === '-') {
-						this.performOperation('-', secondNum, sum)
+						operator = '-';
+						this.performOperation(operator, secondNum, sum);
 					} else if (method == '×') {
-						this.performOperation('×', secondNum, sum)
+						operator = '×';
+						this.performOperation(operator, secondNum, sum);
 					} else if (method == '÷') {
-						this.performOperation('÷', secondNum, sum)
+						operator = '÷';
+						this.performOperation(operator, secondNum, sum);
 					}
 				} 
 			}
