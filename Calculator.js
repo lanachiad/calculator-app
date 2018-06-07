@@ -58,40 +58,34 @@ class Calculator extends React.Component {
 	performOperation = (method, newNum, newTotal) => {
 		if (method === '+') {
 			newTotal += newNum;
-			this.setState({ currentInput: [] });
 			this.setState({ total: newTotal });
 			this.setState({ display: newTotal });
 		} else if (method === '-') {
 			if (newTotal !== 0) {
 				newTotal -= newNum;
-				this.setState({ currentInput: [] });
 				this.setState({ total: newTotal });
 				this.setState({ display: newTotal });
 			} else {
 				this.setState({ total: newNum })
-				this.setState({ currentInput: [] });
 			}
 		} else if (method === '×') {
 			if (newTotal !== 0) {
 				newTotal *= newNum;
-				this.setState({ currentInput: [] });
 				this.setState({ total: newTotal });
 				this.setState({ display: newTotal });
 			} else {
 				this.setState({ total: newNum })
-				this.setState({ currentInput: [] });
 			}
 		} else if (method === '÷') {
 			if (newTotal !== 0) {
 				newTotal /= newNum;
-				this.setState({ currentInput: [] });
 				this.setState({ total: newTotal });
 				this.setState({ display: newTotal });
 			} else {
 				this.setState({ total: newNum })
-				this.setState({ currentInput: [] });
 			}
 		}
+		this.setState({ currentInput: [] });
 	};
 
 	addInput = (newNum, newTotal) => {
