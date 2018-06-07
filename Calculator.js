@@ -44,13 +44,10 @@ class Calculator extends React.Component {
 					let operator;
 					if (method === '+') {
 						operator = '+';
-						// this.performOperation(operator, secondNum, sum);
 					} else if (method === '-') {
 						operator = '-';
-						// this.performOperation(operator, secondNum, sum);
 					} else if (method == '×') {
 						operator = '×';
-						// this.performOperation(operator, secondNum, sum);
 					} else if (method == '÷') {
 						operator = '÷';
 					}
