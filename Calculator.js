@@ -26,76 +26,115 @@ class Calculator extends React.Component {
 			const lastMethod = this.state.lastMethodUsed
 			let sum = Number(this.state.total);
 			if (newInput === '+') {
-				this.addInput(lastNum, sum);
+				this.performOperation('+', lastNum, sum)
 			} else if (newInput === '-') {
-				this.subtractInput(lastNum, sum);
+				this.performOperation('-', lastNum, sum)
 			} else if (newInput === '×') {
 				if(lastNum !== 0) {
-					this.multiplyInput(lastNum, sum);
+					this.performOperation('×', lastNum, sum)
 				}
 			} else if (newInput === '÷') {
 				if(lastNum !== 0) {
-					this.divideInput(lastNum, sum);
+					this.performOperation('÷', lastNum, sum)
 				}
 			} else if (newInput === '=') {
 				if (this.state.currentInput !== []) {
 					const secondNum = Number(this.state.currentInput.join(''));
 					const method = this.state.lastMethodUsed;
 					if (method === '+') {
-						this.addInput(secondNum, sum);
+						this.performOperation('+', secondNum, sum)
 					} else if (method === '-') {
-						this.subtractInput(secondNum, sum);
+						this.performOperation('-', secondNum, sum)
 					} else if (method == '×') {
-						this.multiplyInput(secondNum, sum);
+						this.performOperation('×', secondNum, sum)
 					} else if (method == '÷') {
-						this.divideInput(secondNum, sum);
+						this.performOperation('÷', secondNum, sum)
 					}
 				} 
 			}
 		}
 	};
 
+	performOperation = (method, newNum, newTotal) => {
+		if (method === '+') {
+			newTotal += newNum;
+			this.setState({ currentInput: [] });
+			this.setState({ total: newTotal });
+			this.setState({ display: newTotal });
+		} else if (method === '-') {
+			if (newTotal !== 0) {
+				newTotal -= newNum;
+				this.setState({ currentInput: [] });
+				this.setState({ total: newTotal });
+				this.setState({ display: newTotal });
+			} else {
+				this.setState({ total: newNum })
+				this.setState({ currentInput: [] });
+			}
+		} else if (method === '×') {
+			if (newTotal !== 0) {
+				newTotal *= newNum;
+				this.setState({ currentInput: [] });
+				this.setState({ total: newTotal });
+				this.setState({ display: newTotal });
+			} else {
+				this.setState({ total: newNum })
+				this.setState({ currentInput: [] });
+			}
+		} else if (method === '÷') {
+			if (newTotal !== 0) {
+				newTotal /= newNum;
+				this.setState({ currentInput: [] });
+				this.setState({ total: newTotal });
+				this.setState({ display: newTotal });
+			} else {
+				this.setState({ total: newNum })
+				this.setState({ currentInput: [] });
+			}
+		}
+	};
+
 	addInput = (newNum, newTotal) => {
-		newTotal += newNum;
-		this.setState({ currentInput: [] });
-		this.setState({ total: newTotal });
-		this.setState({ display: newTotal });
+		// newTotal += newNum;
+		// this.setState({ currentInput: [] });
+		// this.setState({ total: newTotal });
+		// this.setState({ display: newTotal });
 	};
 
 	subtractInput = (newNum, newTotal) => {
-		if (newTotal !== 0) {
-			newTotal -= newNum;
-			this.setState({ currentInput: [] });
-			this.setState({ total: newTotal });
-			this.setState({ display: newTotal });
-		} else {
-			this.setState({ total: newNum })
-			this.setState({ currentInput: [] });
-		}
+		// if (newTotal !== 0) {
+		// 	newTotal -= newNum;
+		// 	this.setState({ currentInput: [] });
+		// 	this.setState({ total: newTotal });
+		// 	this.setState({ display: newTotal });
+		// } else {
+		// 	this.setState({ total: newNum })
+		// 	this.setState({ currentInput: [] });
+		// }
 	};
 
 	multiplyInput = (newNum, newTotal) => {
-		if (newTotal !== 0) {
-			newTotal *= newNum;
-			this.setState({ currentInput: [] });
-			this.setState({ total: newTotal });
-			this.setState({ display: newTotal });
-		} else {
-			this.setState({ total: newNum })
-			this.setState({ currentInput: [] });
-		}
+		// if (newTotal !== 0) {
+		// 	newTotal *= newNum;
+		// 	this.setState({ currentInput: [] });
+		// 	this.setState({ total: newTotal });
+		// 	this.setState({ display: newTotal });
+		// } else {
+		// 	this.setState({ total: newNum })
+		// 	this.setState({ currentInput: [] });
+		// }
 	};
 
 	divideInput = (newNum, newTotal) => {
-		if (newTotal !== 0) {
-			newTotal /= newNum;
-			this.setState({ currentInput: [] });
-			this.setState({ total: newTotal });
-			this.setState({ display: newTotal });
-		} else {
-			this.setState({ total: newNum })
-			this.setState({ currentInput: [] });
-		}
+		// if (newTotal !== 0) {
+		// 	newTotal /= newNum;
+		// 	this.setState({ currentInput: [] });
+		// 	this.setState({ total: newTotal });
+		// 	this.setState({ display: newTotal });
+		// } else {
+		// 	this.setState({ total: newNum })
+		// 	this.setState({ currentInput: [] });
+		// }
 	};
 
 	clearInput = () => {
