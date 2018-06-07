@@ -90,49 +90,6 @@ class Calculator extends React.Component {
 		this.setState({ currentInput: [] });
 	};
 
-	addInput = (newNum, newTotal) => {
-		// newTotal += newNum;
-		// this.setState({ currentInput: [] });
-		// this.setState({ total: newTotal });
-		// this.setState({ display: newTotal });
-	};
-
-	subtractInput = (newNum, newTotal) => {
-		// if (newTotal !== 0) {
-		// 	newTotal -= newNum;
-		// 	this.setState({ currentInput: [] });
-		// 	this.setState({ total: newTotal });
-		// 	this.setState({ display: newTotal });
-		// } else {
-		// 	this.setState({ total: newNum })
-		// 	this.setState({ currentInput: [] });
-		// }
-	};
-
-	multiplyInput = (newNum, newTotal) => {
-		// if (newTotal !== 0) {
-		// 	newTotal *= newNum;
-		// 	this.setState({ currentInput: [] });
-		// 	this.setState({ total: newTotal });
-		// 	this.setState({ display: newTotal });
-		// } else {
-		// 	this.setState({ total: newNum })
-		// 	this.setState({ currentInput: [] });
-		// }
-	};
-
-	divideInput = (newNum, newTotal) => {
-		// if (newTotal !== 0) {
-		// 	newTotal /= newNum;
-		// 	this.setState({ currentInput: [] });
-		// 	this.setState({ total: newTotal });
-		// 	this.setState({ display: newTotal });
-		// } else {
-		// 	this.setState({ total: newNum })
-		// 	this.setState({ currentInput: [] });
-		// }
-	};
-
 	clearInput = () => {
 		this.setState({ currentInput: [] });
 		this.setState({ display: '' });
