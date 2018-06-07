@@ -15,11 +15,7 @@ class Calculator extends React.Component {
 	};
 
 	onBtnPress = newInput => {
-		// this.setState({ currentInput: joined }, () => {
-		// 	console.log(this.state.currentInput);
-		// });
 		if (typeof newInput == 'number') {
-			// Creating whole numbers from individual number inputs until NaN is pressed
 			const joined = this.state.currentInput.concat(newInput);
 			this.setState({ currentInput: joined }, () => {
 				this.setState({ display: this.state.currentInput })
