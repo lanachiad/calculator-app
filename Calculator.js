@@ -22,19 +22,59 @@ class Calculator extends React.Component {
 			});
 		} else {
 			this.setState({ lastMethodUsed: newInput });
-			const lastNum = Number(this.state.currentInput.join(''));
+			let lastNum = Number(this.state.currentInput.join(''));
 			const lastMethod = this.state.lastMethodUsed
 			let sum = Number(this.state.total);
 			if (newInput === '+') {
+				if (newInput !== lastMethod && lastMethod !== '') {
+					if (lastMethod === "-") {
+						sum -= lastNum
+					} else if (lastMethod === "×") {
+						sum *= lastNum
+					} else if (lastMethod === "÷") {
+						sum /= lastNum
+					}
+					lastNum = 0;
+				}
 				this.performOperation('+', lastNum, sum)
 			} else if (newInput === '-') {
+				if (newInput !== lastMethod && lastMethod !== '') {
+					if (lastMethod === "+") {
+						sum += lastNum
+					} else if (lastMethod === "×") {
+						sum *= lastNum
+					} else if (lastMethod === "÷") {
+						sum /= lastNum
+					}
+					lastNum = 0;
+				}
 				this.performOperation('-', lastNum, sum)
 			} else if (newInput === '×') {
-				if(lastNum !== 0) {
+				if (lastNum !== 0) {
+					if (newInput !== lastMethod && lastMethod !== '') {
+						if (lastMethod === "+") {
+							sum += lastNum
+						} else if (lastMethod === "-") {
+							sum -= lastNum
+						} else if (lastMethod === "÷") {
+							sum /= lastNum
+						}
+						lastNum = 1;
+					}
 					this.performOperation('×', lastNum, sum)
 				}
 			} else if (newInput === '÷') {
-				if(lastNum !== 0) {
+				if (lastNum !== 0) {
+					if (newInput !== lastMethod && lastMethod !== '') {
+						if (lastMethod === "+") {
+							sum += lastNum
+						} else if (lastMethod === "×") {
+							sum *= lastNum
+						} else if (lastMethod === "-") {
+							sum-= lastNum
+						}
+						lastNum = 1;
+					}
 					this.performOperation('÷', lastNum, sum)
 				}
 			} else if (newInput === '=') {
@@ -56,6 +96,19 @@ class Calculator extends React.Component {
 			}
 		}
 	};
+
+	completeOperation = (method, newNum, newTotal) => {
+		if (method === '+') {
+			newTotal += newNum;
+		} else if (method === '-') {
+			newTotal -= newNum;
+		} else if (method === '×') {
+			newTotal *= newNum;
+		} else if (method === '÷') {
+			newTotal /= newNum;
+		}
+		return newTotal;
+	}
 
 	performOperation = (method, newNum, newTotal) => {
 		if (method === '+') {
